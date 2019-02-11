@@ -1,0 +1,39 @@
+<!-- EXPORTER_DEPENDENCIES -->
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        :host {
+            display: block;
+            color: var(${TEXT__color});
+            font-size: var(${TEXT__font-size});
+            font-weight: var(${TEXT__font-weight});
+            min-width: ${width}px;
+            min-height: ${height}px;
+        }
+    </style>
+
+    <!-- EXPORTER_TEMPLATE <slot></slot> END_EXPORTER_TEMPLATE -->
+
+
+`;
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends HTMLElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        if (!this.shadowRoot) {
+            this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+        }
+    }
+
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);
+

@@ -1,0 +1,135 @@
+<!-- EXPORTER_DEPENDENCIES -->
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        :host {
+            display: block;
+            background-color: var(${simple-card__RECTANGLE__background-color});
+
+            width: ${simple-card__width}px;
+            min-height: ${simple-card__height}px;
+
+            padding: 20px;
+        }
+
+        .table {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: ${simple-card__height}px;
+        }
+
+        .row {
+            display: flex;
+            flex: 0 1 100%;
+        }
+
+        .cell {
+            display: flex;
+        }
+
+        .row:nth-child(1) {
+            justify-content: ${simple-card__GROUPEXPORTER-ROW273_834__justify-content};
+        }
+        .row:nth-child(1) .cell {
+            flex-grow: ${simple-card__GROUPEXPORTER-ROW273_834__cell-flex-grow};
+        }
+        .row:nth-child(1) atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: ${simple-card__GROUPEXPORTER-ROW273_834__GROUP__RECTANGLE__height}px;
+            min-width: ${simple-card__GROUPEXPORTER-ROW273_834__GROUP__RECTANGLE__width}px;
+            background-color: var(${simple-card__GROUPEXPORTER-ROW273_834__GROUP__RECTANGLE__background-color});
+        }
+
+        .row:nth-child(2) {
+            justify-content: ${simple-card__GROUPEXPORTER-ROW__justify-content};
+        }
+        .row:nth-child(2) .cell {
+            flex-grow: ${simple-card__GROUPEXPORTER-ROW__cell-flex-grow};
+        }
+        .row:nth-child(2) atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: ${simple-card__GROUPEXPORTER-ROW__GROUP__RECTANGLE__height}px;
+            min-width: ${simple-card__GROUPEXPORTER-ROW__GROUP__RECTANGLE__width}px;
+            background-color: var(${simple-card__GROUPEXPORTER-ROW__GROUP__RECTANGLE__background-color});
+        }
+
+        .row:nth-child(3) {
+            justify-content: ${simple-card__GROUP__justify-content};
+        }
+        .row:nth-child(3) .cell {
+            flex-grow: ${simple-card__GROUP__cell-flex-grow};
+        }
+        .row:nth-child(3) atom-rectangle:nth-child(1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: ${simple-card__GROUP__GROUPEXPORTER-CELL__VECTOR__height}px;
+            min-width: ${simple-card__GROUP__GROUPEXPORTER-CELL__VECTOR__width}px;
+            background-color: var(${simple-card__GROUP__GROUPEXPORTER-CELL__VECTOR__background-color});
+        }
+        .row:nth-child(3) atom-rectangle:nth-child(2) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: ${simple-card__GROUP__GROUP__VECTOR__height}px;
+            min-width: ${simple-card__GROUP__GROUP__VECTOR__width}px;
+            background-color: var(${simple-card__GROUP__GROUP__VECTOR__background-color});
+        }
+    </style>
+
+    <atom-rectangle>
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <atom-rectangle></atom-rectangle>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <atom-rectangle>
+                        <simple-chip>Chip</simple-chip>
+                    </atom-rectangle>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <atom-rectangle>
+                        <button-rectangle>Left</button-rectangle>
+                    </atom-rectangle>
+                </div>
+                <div class="cell">
+                    <atom-rectangle>
+                        <button-rectangle>Right</button-rectangle>
+                    </atom-rectangle>
+                </div>
+            </div>
+        </div>
+    </atom-rectangle>
+    <slot></slot>
+`;
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends HTMLElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        if (!this.shadowRoot) {
+            this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+        }
+    }
+
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);
+

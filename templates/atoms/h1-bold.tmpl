@@ -1,0 +1,36 @@
+<!-- EXPORTER_DEPENDENCIES -->
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        :host {
+            display: block;
+            color: var(${h1-bold__TEXT__color});
+            font-size: var(${h1-bold__TEXT__font-size});
+            font-weight: var(${h1-bold__TEXT__font-weight});
+            min-width: ${h1-bold__width}px;
+            min-height: ${h1-bold__height}px;
+        }
+    </style>
+    <slot></slot>
+`;
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends HTMLElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        if (!this.shadowRoot) {
+            this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+        }
+    }
+
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);
+

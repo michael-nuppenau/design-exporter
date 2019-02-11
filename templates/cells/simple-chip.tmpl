@@ -1,0 +1,100 @@
+import {PolymerElement, html} from '@polymer/polymer';
+<!-- EXPORTER_DEPENDENCIES -->
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends PolymerElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    static get properties() {
+        return {
+            iconName: String
+        }
+    }
+
+    static get template() {
+    return html`
+        <style>
+            :host {
+                display: inline-block;
+                height: ${simple-chip__height}px;
+                min-width: ${simple-chip__width}px;
+                --avatar-icon__wrapper-width: ${simple-chip__FRAMEcentered__xy__width}px;
+
+                font-size: var(${simple-chip__FRAME__TEXT__font-size});
+                font-weight: var(${simple-chip__FRAME__TEXT__font-weight});
+                --chip-left__background-color: var(${simple-chip__RECTANGLE__background-color});
+                --chip-left__color: var(${simple-chip__FRAME__TEXT__color});
+                --chip-left__border-radius: ${simple-chip__RECTANGLE__border-radius}px;
+                --chip-left__icon-background-height: ${simple-chip__FRAMEcentered__xy__avatar-icon__height}px;
+                --chip-left__icon-background-width: ${simple-chip__FRAMEcentered__xy__avatar-icon__width}px;
+                --chip-left__icon-color: var(${simple-chip__FRAMEcentered__xy__avatar-icon__simple-icon__VECTOR__background-color});
+                --chip-left__icon-background-color: var(${simple-chip__FRAMEcentered__xy__avatar-icon__ELLIPSE__background-color});
+            }
+
+            :host([type="incorrect"]) {
+                font-size: var(${chip-incorrect__FRAME__TEXT__font-size});
+                font-weight: var(${chip-incorrect__FRAME__TEXT__font-weight});
+                --chip-left__background-color: var(${chip-incorrect__RECTANGLE__background-color});
+                --chip-left__color: var(${chip-incorrect__FRAME__TEXT__color});
+                --chip-left__border-radius: ${chip-incorrect__RECTANGLE__border-radius}px;
+                --chip-left__icon-background-height: ${chip-incorrect__FRAMEcentered__xy__avatar-icon__height}px;
+                --chip-left__icon-background-width: ${chip-incorrect__FRAMEcentered__xy__avatar-icon__width}px;
+                --chip-left__icon-color: var(${chip-incorrect__FRAMEcentered__xy__avatar-icon__simple-icon__VECTOR__background-color});
+                --chip-left__icon-background-color: var(${chip-incorrect__FRAMEcentered__xy__avatar-icon__ELLIPSE__background-color});
+            }
+
+            :host([type="neutral"]) {
+                font-size: var(${chip-neutral__FRAME__TEXT__font-size});
+                font-weight: var(${chip-neutral__FRAME__TEXT__font-weight});
+                --chip-left__background-color: var(${chip-neutral__RECTANGLE__background-color});
+                --chip-left__color: var(${chip-neutral__FRAME__TEXT__color});
+                --chip-left__border-radius: ${chip-neutral__RECTANGLE__border-radius}px;
+                --chip-left__icon-background-height: ${chip-neutral__FRAMEcentered__xy__avatar-icon__height}px;
+                --chip-left__icon-background-width: ${chip-neutral__FRAMEcentered__xy__avatar-icon__width}px;
+                --chip-left__icon-background-color: var(${chip-neutral__FRAMEcentered__xy__avatar-icon__ELLIPSE__background-color});
+                --chip-left__icon-color: var(${chip-neutral__FRAMEcentered__xy__avatar-icon__simple-icon__VECTOR__background-color});
+            }
+
+            :host([type="premium"]) {
+                font-size: var(${chip-premium__FRAME__TEXT__font-size});
+                font-weight: var(${chip-premium__FRAME__TEXT__font-weight});
+                --chip-left__background-color: var(${chip-premium__RECTANGLE__background-color});
+                --chip-left__color: var(${chip-premium__FRAME__TEXT__color});
+                --chip-left__border-radius: ${chip-premium__RECTANGLE__border-radius}px;
+                --chip-left__icon-background-height: ${chip-premium__FRAMEcentered__xy__avatar-icon__height}px;
+                --chip-left__icon-background-width: ${chip-premium__FRAMEcentered__xy__avatar-icon__width}px;
+                --chip-left__icon-background-color: var(${chip-premium__FRAMEcentered__xy__avatar-icon__ELLIPSE__background-color});
+                --chip-left__icon-color: var(${chip-premium__FRAMEcentered__xy__avatar-icon__simple-icon__VECTOR__background-color});
+            }
+
+            atom-rectangle {
+                box-sizing: border-box;
+
+                background-color: var(--chip-left__background-color);
+                border-radius: var(--chip-left__border-radius);
+                color: var(--chip-left__color);
+                padding: 0 var(--chip-left__border-radius, 0) 0 0;
+            }
+
+            avatar-icon {
+                --avatar-icon__background-color: var(--chip-left__icon-background-color);
+                --avatar-icon__icon-color: var(--chip-left__icon-color, var(--chip-left__background-color));
+                --avatar-icon__background-height: var(--chip-left__icon-background-height);
+                --avatar-icon__background-width: var(--chip-left__icon-background-width);
+            }
+
+        </style>
+
+        <atom-rectangle>
+            <avatar-icon icon-name="[[iconName]]"></avatar-icon>
+            <text-block>
+                <slot></slot>
+            </text-block>
+        </atom-rectangle>
+    `;
+  }
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);

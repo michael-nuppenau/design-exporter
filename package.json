@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "fs-extra": "^5.0.0",
+    "request": "^2.83.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

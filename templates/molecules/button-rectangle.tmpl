@@ -1,0 +1,94 @@
+<!-- EXPORTER_DEPENDENCIES -->
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        :host {
+            display: inline-block;
+            cursor: pointer;
+
+            height: ${button-rectangle__height}px;
+            min-width: ${button-rectangle__width}px;
+        }
+
+        :host atom-rectangle {
+            background-color: var(${button-rectangle__RECTANGLE__background-color});
+            border: ${button-rectangle__RECTANGLE__border};
+            border-radius: ${button-rectangle__RECTANGLE__border-radius}px;
+            box-shadow: var(${button-rectangle__RECTANGLE__box-shadow});
+            color: var(${button-rectangle__TEXT__color});
+            font-size: var(${button-rectangle__TEXT__font-size});
+            font-weight: var(${button-rectangle__TEXT__font-weight});
+
+            box-sizing: border-box;
+        }
+
+        text-block {
+            width: 100%;
+        }
+
+        :host(:hover) atom-rectangle {
+            background-color: var(${button-rectangle-hover__RECTANGLE__background-color});
+            border: ${button-rectangle-hover__RECTANGLE__border};
+            border-radius: ${button-rectangle-hover__RECTANGLE__border-radius}px;
+            box-shadow: var(${button-rectangle-hover__RECTANGLE__box-shadow});
+            color: var(${button-rectangle-hover__TEXT__color});
+            font-size: var(${button-rectangle-hover__TEXT__font-size});
+            font-weight: var(${button-rectangle-hover__TEXT__font-weight});
+        }
+
+        :host(:active) atom-rectangle {
+            background-color: var(${button-rectangle-active__RECTANGLE__background-color});
+            border: ${button-rectangle-active__RECTANGLE__border};
+            border-radius: ${button-rectangle-active__RECTANGLE__border-radius}px;
+            box-shadow: var(${button-rectangle-active__RECTANGLE__box-shadow});
+            color: var(${button-rectangle-active__TEXT__color});
+            font-size: var(${button-rectangle-active__TEXT__font-size});
+            font-weight: var(${button-rectangle-active__TEXT__font-weight});
+        }
+
+        :host(:focus) atom-rectangle {
+            background-color: var(${button-rectangle-focus__RECTANGLE__background-color});
+            border: ${button-rectangle-focus__RECTANGLE__border};
+            border-radius: ${button-rectangle-focus__RECTANGLE__border-radius}px;
+            box-shadow: var(${button-rectangle-focus__RECTANGLE__box-shadow});
+            color: var(${button-rectangle-focus__TEXT__color});
+            font-size: var(${button-rectangle-focus__TEXT__font-size});
+            font-weight: var(${button-rectangle-focus__TEXT__font-weight});
+        }
+
+        :host(:disabled) atom-rectangle {
+            background-color: var(${button-rectangle-disabled__RECTANGLE__background-color});
+            border: ${button-rectangle-disabled__RECTANGLE__border};
+            border-radius: ${button-rectangle-disabled__RECTANGLE__border-radius}px;
+            box-shadow: var(${button-rectangle-disabled__RECTANGLE__box-shadow});
+            color: var(${button-rectangle-disabled__TEXT__color});
+            font-size: var(${button-rectangle-disabled__TEXT__font-size});
+            font-weight: var(${button-rectangle-disabled__TEXT__font-weight});
+        }
+    </style>
+    <atom-rectangle>
+        <text-block>
+            <slot></slot>
+        </text-block>
+    </atom-rectangle>
+`;
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends HTMLElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        if (!this.shadowRoot) {
+            this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+        }
+    }
+
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);

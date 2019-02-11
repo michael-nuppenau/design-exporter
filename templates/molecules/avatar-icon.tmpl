@@ -1,0 +1,60 @@
+import {PolymerElement, html} from '@polymer/polymer';
+import '../_primitives/ellipse.js';
+
+<!-- EXPORTER_DEPENDENCIES -->
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends PolymerElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    static get properties() {
+        return {
+            iconName: String
+        }
+    }
+
+    static get template() {
+    return html`
+        <style>
+            :host {
+                display: inline-block;
+                overflow: hidden;
+                height: 100%;
+            }
+
+            atom-ellipse {
+                background-color: var(--avatar-icon__background-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: var(--avatar-icon__background-height);
+                width: var(--avatar-icon__background-width);
+            }
+
+            iron-icon {
+                color: var(--avatar-icon__icon-color);
+                height: var(--icon-height);
+                width: var(--icon-width);
+            }
+
+            .wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: var(--avatar-icon__wrapper-width);
+            }
+        </style>
+
+        <div class="wrapper">
+            <atom-ellipse>
+                <iron-icon icon="[[iconName]]"></iron-icon>
+            </atom-ellipse>
+        </div>
+    `;
+  }
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);

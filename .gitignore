@@ -1,0 +1,7 @@
+/node_modules
+/build
+package-lock.json
+testdata.json
+/testapp/build
+/testapp/node_modules
+/testapp/package-lock.json

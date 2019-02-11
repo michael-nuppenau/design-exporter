@@ -1,0 +1,163 @@
+<!-- EXPORTER_DEPENDENCIES -->
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        :host {
+            display: block;
+            background-color: var(${simple-card_2__RECTANGLE__background-color});
+
+            width: ${simple-card_2__width}px;
+            min-height: ${simple-card_2__height}px;
+
+            padding: 20px;
+        }
+
+        .table {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            min-height: ${simple-card_2__height}px;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cell {
+            display: flex;
+        }
+
+        .col:nth-child(1) {
+            justify-content: ${simple-card_2__GROUPEXPORTER-COL302_53__justify-content};
+        }
+        .col:nth-child(1) .cell:nth-child(1) {
+            align-items: ${simple-card_2__GROUPEXPORTER-COL302_53__justify-content};
+        }
+        .col:nth-child(1) .cell:nth-child(1) > atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__RECTANGLE__height}px;
+            width: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__RECTANGLE__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__RECTANGLE__background-color});
+        }
+        .col:nth-child(1) .cell:nth-child(1) > atom-rectangle > atom-rectangle {
+            height: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__VECTOR__height}px;
+            width: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__VECTOR__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL302_53__GROUPEXPORTER-CELL__VECTOR__background-color});
+        }
+
+        .col:nth-child(1) .cell:nth-child(2) {
+            align-items: ${simple-card_2__GROUPEXPORTER-COL302_53__justify-content};
+        }
+        .col:nth-child(1) .cell:nth-child(2) > atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUP__RECTANGLE__height}px;
+            width: ${simple-card_2__GROUPEXPORTER-COL302_53__GROUP__RECTANGLE__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL302_53__GROUP__RECTANGLE__background-color});
+        }
+        .col:nth-child(1) .cell:nth-child(2) > atom-rectangle > atom-rectangle {
+            height: ${simple-card_2__GROUP__GROUP__RECTANGLERectangle-2__height}px;
+            width: ${simple-card_2__GROUP__GROUP__RECTANGLERectangle-2__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL302_53__GROUP__VECTOR__background-color});
+        }
+
+        .col:nth-child(2) {
+            justify-content: ${simple-card_2__GROUPEXPORTER-COL__justify-content};
+        }
+        .col:nth-child(2) .cell {
+            align-items: ${simple-card_2__GROUPEXPORTER-COL__justify-content};
+        }
+        .col:nth-child(2) .cell > atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: ${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLE__height}px;
+            width: ${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLE__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLE__background-color});
+        }
+
+        .col:nth-child(2) .cell > atom-rectangle > atom-rectangle {
+            height: ${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLERectangle-2__height}px;
+            width: ${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLERectangle-2__width}px;
+            background-color: var(${simple-card_2__GROUPEXPORTER-COL__GROUP__RECTANGLERectangle-2__background-color});
+        }
+
+        .col:nth-child(3) {
+            justify-content: ${simple-card_2__GROUP__justify-content};
+        }
+        .col:nth-child(3) .cell {
+            align-items: ${simple-card_2__GROUP__justify-content};
+        }
+        .col:nth-child(3) .cell > atom-rectangle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: ${simple-card_2__GROUP__GROUP__RECTANGLE__height}px;
+            width: ${simple-card_2__GROUP__GROUP__RECTANGLE__width}px;
+            background-color: var(${simple-card_2__GROUP__GROUP__RECTANGLE__background-color});
+        }
+
+        .col:nth-child(3) .cell > atom-rectangle > atom-rectangle {
+            height: ${simple-card_2__GROUP__GROUP__RECTANGLERectangle-2__height}px;
+            width: ${simple-card_2__GROUP__GROUP__RECTANGLERectangle-2__width}px;
+            background-color: var(${simple-card_2__GROUP__GROUP__RECTANGLERectangle-2__background-color});
+        }
+    </style>
+
+    <atom-rectangle>
+        <div class="table">
+            <div class="col">
+                <div class="cell">
+                    <atom-rectangle>
+                        <atom-rectangle></atom-rectangle>
+                    </atom-rectangle>
+                </div>
+                <div class="cell">
+                    <atom-rectangle>
+                        <atom-rectangle></atom-rectangle>
+                    </atom-rectangle>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cell">
+                    <atom-rectangle>
+                        <atom-rectangle></atom-rectangle>
+                    </atom-rectangle>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cell">
+                    <atom-rectangle>
+                        <atom-rectangle></atom-rectangle>
+                    </atom-rectangle>
+                </div>
+            </div>
+        </div>
+    </atom-rectangle>
+    <slot></slot>
+`;
+
+class <!-- EXPORTER_COMPONENT_CLASS_NAME --> extends HTMLElement {
+
+    static get is() {
+        return '<!-- EXPORTER_COMPONENT_NAME -->';
+    }
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        if (!this.shadowRoot) {
+            this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true));
+        }
+    }
+
+}
+
+customElements.define(<!-- EXPORTER_COMPONENT_CLASS_NAME -->.is, <!-- EXPORTER_COMPONENT_CLASS_NAME -->);
+
