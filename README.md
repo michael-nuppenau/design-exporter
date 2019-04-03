@@ -18,7 +18,7 @@ The design-extracor needs the following problems to function:
 
 To setup:
 
-1. Clone the repository [desk-configurator](https://bitbucket.org/laerdalmedical/design-exporter/src/master/) in a folder somewhere.
+1. Clone the repository in a folder somewhere.
 
 2. Install the needed packages for the exporter and the test app:
     ```bash
